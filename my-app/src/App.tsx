@@ -1,35 +1,3 @@
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-
-//   const form: HTMLFormElement = document.querySelector('#defineform');
-//   document.body.addEventListener("submit", async function(event){
-//   event.preventDefault();
-//   const form = event.target as HTMLFormElement;
-//       });
-
-// form.onsubmit = () => {
-//   const formData = new FormData(form);
-//   console.log(formData);
-//   const text = formData.get('defineword') as string;
-//   fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + text)
-//       .then((response: Response) => response.json())
-//       .then(function(data){console.log(data)})
-//       .catch((error) => console.log(error));
-//   console.log(text);
-//   return true; // prevent reload
-
-// };
-//   return (
-//       <div className="App">
-         
-//       </div>
-//   );
-// }
-// export default App;
-
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
@@ -48,7 +16,6 @@ function App() {
     event.preventDefault();
     let form = event.target as HTMLFormElement;
   });
-
 
 
     useEffect(() => {
@@ -73,38 +40,48 @@ function App() {
         //  console.log(def);
       }
     }
-
       //.catch((error) => console.log(error));
       //console.log(text);
-
       ,[]);
-<main className="container">
+      return (
+   
 
-          <div className="bg-light p-5 rounded">
-            <h1 className="defined">Definition</h1>
-            <p className="lead">
-            Random Text
-            </p>
-            {def.map((def) => (
+        <div className="App">
+          <main className="container">
+    <div className="bg-light p-5 rounded">
+      {/* <img src="https://www.publicbooks.org/wp-content/uploads/2017/01/book-e1484158615982.jpg" width="1000" height="400"></img> */}
+        <h1 className="defined">DICTIONARY</h1>
+        <p className="lead">Definition</p>
+      {def.map((def: any) => (
+      <ul className="list-unstyled">
+        <li><b><u>{def.word}</u></b></li>
+        {def.phonetics.map((phonetics: any) => (
+        <ul className="list-unstyled">
+          <li><b>Phonetic: </b>{phonetics.text}</li>
+            {def.meanings.map((meanings: any) => (
             <ul className="list-unstyled">
-              <li>{def.word}</li>
-                <li>Random Text</li>
-              <li>Maybe your multiple definitions of the word are here?</li>
-              <li>Structurally, it's still a list.</li>
-              <li>
-                However, this style only applies to immediate child elements.
-              </li>
-              <li>
-                Nested lists: (maybe synonyms and antonyms?)
-                <ul>
-                  <li>are unaffected by this style</li>
-                  <li>will still show a bullet</li>
-                  <li>and have appropriate left margin</li>
-                </ul>
-              </li>
-              <li>This may still come in handy in some situations.</li>
-              </ul>
-              ))}
-           </div>
-
-        </main>
+              <li><i>{meanings.partOfSpeech}</i></li>
+              <li><b>Antonym(s): </b>{meanings.antonyms.join(', ')} </li>
+              <li><b>Synonyms(s): </b>{meanings.synonyms.join(', ')} </li>
+                  {meanings.definitions.map((definitions: any) => (
+                  <ul className="list-unstyled">
+                     <ul>
+                     <li>{definitions.definition}</li>
+                     </ul>
+        </ul>
+        ))}
+        <p>______________________________________</p>
+        </ul>
+        ))}
+        </ul>
+        ))}
+        </ul>
+        ))}
+     </div>
+    
+    </main>
+        </div>
+      );
+    }
+    
+    export default App;
