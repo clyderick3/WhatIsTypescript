@@ -45,11 +45,10 @@ function App() {
       ,[]);
       return (
    
-
-        <div className="App">
+<div className="App">
           <main className="container">
     <div className="bg-light p-5 rounded">
-      {/* <img src="https://www.publicbooks.org/wp-content/uploads/2017/01/book-e1484158615982.jpg" width="1000" height="400"></img> */}
+      {/* <img src="https://www.jpg" width="800" height="300"></img> */}
         <h1 className="defined">DICTIONARY</h1>
         <p className="lead">Definition</p>
       {def.map((def: any) => (
