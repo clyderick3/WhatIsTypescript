@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
@@ -73,6 +74,14 @@ import './App.css';
 
 function App() {
 
+=======
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+function App() {
+
+>>>>>>> parent of b66eb83 (Cleaned up some old code.)
   const form: HTMLFormElement = document.querySelector('#defineform');
   document.body.addEventListener("submit", async function(event){
   event.preventDefault();
@@ -95,6 +104,9 @@ form.onsubmit = () => {
       <div className="App">
          
       </div>
+<<<<<<< HEAD
+>>>>>>> parent of b66eb83 (Cleaned up some old code.)
+=======
 >>>>>>> parent of b66eb83 (Cleaned up some old code.)
   );
 }
