@@ -47,40 +47,25 @@ function App() {
    
 <div className="App">
           <main className="container">
-    <div className="bg-light p-5 rounded">
-      {/* <img src="https://www.jpg" width="800" height="300"></img> */}
-        <h1 className="defined">DICTIONARY</h1>
-        <p className="lead">Definition</p>
-      {def.map((def: any) => (
-      <ul className="list-unstyled">
-        <li><b><u>{def.word}</u></b></li>
-        {def.phonetics.map((phonetics: any) => (
-        <ul className="list-unstyled">
-          <li><b>Phonetic: </b>{phonetics.text}</li>
-            {def.meanings.map((meanings: any) => (
-            <ul className="list-unstyled">
-              <li><i>{meanings.partOfSpeech}</i></li>
-              <li><b>Antonym(s): </b>{meanings.antonyms.join(', ')} </li>
-              <li><b>Synonyms(s): </b>{meanings.synonyms.join(', ')} </li>
-                  {meanings.definitions.map((definitions: any) => (
-                  <ul className="list-unstyled">
-                     <ul>
-                     <li>{definitions.definition}</li>
-                     </ul>
-        </ul>
-        ))}
-        <p>______________________________________</p>
-        </ul>
-        ))}
-        </ul>
-        ))}
-        </ul>
-        ))}
-     </div>
-    
-    </main>
-        </div>
-      );
-    }
-    
-    export default App;
+          <div className="bg-light p-5 rounded">
+  <h1 className="defined">Definition</h1>
+  <p className="lead">Random Text</p>
+  {def.map((def) => (
+  <ul className="list-unstyled">
+    <li>{def.word}</li>
+    <li>{def.phonetic}</li>
+    <li>Part Of Speech: {def.meanings[0].partOfSpeech}</li>
+    <li>Definition: {def.meanings[0].definitions[0].definition}</li>
+    <li>Synonym: {def.meanings[0].synonyms}</li>
+    <li>Antonym: {def.meanings[0].antonyms}</li>
+    <li>Origin: {def.origin}</li>
+    </ul>
+    ))}
+ </div>
+
+</main>
+    </div>
+  );
+}
+
+export default App;
