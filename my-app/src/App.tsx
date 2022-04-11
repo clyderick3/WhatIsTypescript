@@ -48,8 +48,8 @@ function App() {
 <div className="App">
           <main className="container">
           <div className="bg-light p-5 rounded">
-  <h1 className="defined">Definition</h1>
-  <p className="lead">Random Text</p>
+  <h1 className="defined">Scrabble Dictionary</h1>
+  <p className="lead">Is your word a word? Click define.</p>
   {def.map((def) => (
   <ul className="list-unstyled">
     <li>{def.word}</li>
